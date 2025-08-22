@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /etc/nixos/hardware-configuration.nix ~/snix/nixos/hardware-configuration.nix
+
+cd ~/snix/nixos/
+
+sudo nixos-rebuild switch --flake .#nixos

@@ -1,0 +1,51 @@
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+shape = "Block"
+blinking = "Never"
+
+[cursor.vi_mode_style]
+shape = "Block"
+blinking = "Never"
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+dynamic_title = true
+opacity = 0.9
+blur = true
+
+[window.padding]
+x = 10
+y = 10
+
+[colors]
+draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
+
+[font]
+size = 20
+
+# Explicitly define styles for each variant
+[font.normal]
+family = "JetBrainsMono NF"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono NF"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono NF"
+style = "Bold Italic"
+
+[general]
+live_config_reload = true
+import = ["~/.cache/wal/colors-alacritty.toml"]
