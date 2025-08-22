@@ -45,7 +45,19 @@
   security.sudo.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    package = pkgs.kdePackages.sddm;
+    wayland.enable = true;
+    theme = "sddm-astronaut-theme";
+  };
+  # services.displayManager.defaultSession = "none+bspwm";
+  services.displayManager.sddm.extraPackages = with pkgs; [
+    kdePackages.qtmultimedia
+    kdePackages.qtsvg
+    kdePackages.qtdeclarative
+    kdePackages.qt5compat
+  ];
   services.xserver.desktopManager.budgie.enable = true;
 
   # Configure keymap in X11
@@ -60,14 +72,19 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
+    services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    media-session.enable = true;
+    wireplumber.enable = true;
   };
+
+  services.udisks2.enable = true;
+
+  programs.fish.enable = true;
+
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -77,7 +94,7 @@
         tree
     ];
   };
-  user.defaultShell = pkgs.fish;
+  users.defaultUserShell = pkgs.fish;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -86,6 +103,49 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    stow
+    sddm-astronaut
+    kdePackages.qtmultimedia
+    kdePackages.qtsvg
+    kdePackages.qtdeclarative
+    kdePackages.qt5compat
+    bibata-cursors
+    powerline-fonts
+    nitch
+    blueman
+    bluez
+    brightnessctl
+    pavucontrol
+    acl
+    alsa-utils
+    alsa-plugins
+    alsa-lib
+    pipewire
+    jamesdsp
+    imagemagick
+    ffmpeg
+    vlc
+    mpv
+    btop
+    htop
+    powertop
+    curl
+    bc
+    killall
+    usbutils
+    pciutils
+    unzip
+    zip
+    ripgrep
+    bat
+    tree
+    which
+    eza
+    zoxide
+    starship
+    qbittorrent
+    libreoffice-fresh
+    brave
   ];
 
   programs.mtr.enable = true;

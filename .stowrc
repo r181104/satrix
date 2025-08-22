@@ -2,5 +2,5 @@
 --ignore=.stowrc
 --ignore=scripts
 --ignore=.git
---ignore=nixos
+--ignore=nix
 --ignore=.gitignore
