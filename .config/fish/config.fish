@@ -85,13 +85,10 @@ alias restart-dm 'systemctl restart display-manager'
 #  =========================================
 #           PACKAGE MANAGEMENT
 #  =========================================
-alias rebel 'bash ~/snix/scripts/rebuild'
-alias uprebel 'bash ~/snix/scripts/up-rebuild'
-alias cwifi 'bash ~/snix/scripts/cwifi'
-alias op-net='bash ~/snix/scripts/optimize-network'
-alias wb '~/snix/scripts/wset'
-alias wq '~/sqtile/scripts/wset'
-alias wh '~/shypr/scripts/wset'
+alias rebel 'bash ~/satrix/scripts/rebuild'
+alias uprebel 'bash ~/satrix/scripts/up-rebuild'
+alias cwifi 'bash ~/satrix/scripts/cwifi'
+alias op-net='bash ~/satrix/scripts/optimize-network'
 
 #  =========================================
 #           FILE OPERATIONS
@@ -208,8 +205,8 @@ function clean-nix
 end
 
 function store-size
-  df -h /              
-  du -sh /nix/store     
+  df -h /
+  du -sh /nix/store
 end
 
 function fish_greeting

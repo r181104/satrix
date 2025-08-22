@@ -142,6 +142,7 @@
     which
     eza
     zoxide
+    fzf
     starship
     qbittorrent
     libreoffice-fresh

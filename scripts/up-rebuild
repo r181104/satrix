@@ -1,13 +1,13 @@
 #!/bin/sh
 
-cp /etc/nixos/hardware-configuration.nix ~/snix/nixos/hardware-configuration.nix
+cp /etc/nixos/hardware-configuration.nix ~/satrix/nix/hardware-configuration.nix
 
-cd ~/snix/nixos/
+cd ~/satrix/nix/
 
 nix flake update
 
 git add . && git commit -m 's'
 
-sudo nixos-rebuild switch --upgrade --flake .#nixos
+sudo nixos-rebuild switch --upgrade --flake .#satrix
 
 nix store optimise
